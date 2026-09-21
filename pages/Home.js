@@ -146,7 +146,7 @@ export default function Home() {
       {/* Metrics */}
       <div style={{
         display: "grid",
-        gridTemplateColumns: "repeat(4, 1fr)",
+        gridTemplateColumns: "repeat(5, 1fr)",
         gap: "12px", marginBottom: "20px",
       }}>
         <MetricCard label="EAR"
@@ -157,6 +157,11 @@ export default function Home() {
           value={data?.pitch_adj     ?? "—"} unit="°" />
         <MetricCard label="Yaw adj"
           value={data?.yaw_adj       ?? "—"} unit="°" />
+        <MetricCard label="Confidence"
+          value={data?.confidence
+            ? `${(data.confidence * 100).toFixed(0)}%`
+            : "—"}
+            unit="" />
       </div>
 
       {/* Content Area */}

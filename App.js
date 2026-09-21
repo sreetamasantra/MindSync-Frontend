@@ -1,6 +1,7 @@
 import { Routes, Route, Link, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
 import Analytics from "./pages/Analytics";
+import Metrics  from "./pages/Metrics";
 
 function Navbar() {
   const location = useLocation();
@@ -39,6 +40,9 @@ function Navbar() {
         <Link to="/analytics" style={linkStyle("/analytics")}>
           Analytics
         </Link>
+        <Link to="/metrics" style={linkStyle("/metrics")}>
+  Model Metrics
+</Link>
       </div>
     </nav>
   );
@@ -57,6 +61,7 @@ export default function App() {
         <Routes>
           <Route path="/"          element={<Home />} />
           <Route path="/analytics" element={<Analytics />} />
+          <Route path="/metrics"   element={<Metrics />} />
         </Routes>
       </div>
     </div>
